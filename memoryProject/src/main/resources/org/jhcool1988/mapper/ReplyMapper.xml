@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jhcool1988.mapper.ReplyMapper">
+
+<!-- <select id ="allList" resultType="org.jhcool1988.domain.BoardVO">
+<![CDATA[
+select * from board_context
+]]>
+</select> -->
+
+<select id ="getList" resultType="org.jhcool1988.domain.ReplyVO">
+<![CDATA[
+select * from tbl_reply where idx = #{idx} order by bno desc
+]]>
+</select>
+
+<insert id="insert">
+	
+	insert into tbl_reply (idx, reply, replyer)
+	values (#{idx}, #{reply}, #{replyer})
+
+</insert>
+
+<delete id = "delete">
+
+	delete from tbl_reply where bno = #{bno}
+
+</delete>
+
+<update id="update">
+
+ update tbl_reply set reply=#{reply}
+ where bno=#{bno}
+ 
+</update>
+
+<delete id = "deleteAll">
+
+	delete from tbl_reply where idx = #{idx}
+
+</delete>
+
+
+</mapper>

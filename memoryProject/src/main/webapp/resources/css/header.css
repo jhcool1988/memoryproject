@@ -1,0 +1,23 @@
+html {
+  overflow-y: scroll;
+}
+.search-header {
+  position: relative;
+  height: 80px;
+
+}
+
+
+
+.search-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
